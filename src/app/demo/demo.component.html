@@ -1,0 +1,70 @@
+<br>
+<br>
+<br>
+
+<div class="card" >
+    <div class="card-header price">{{demo.sourceCategory}}</div>
+    <div class="card-body">
+
+        <div class="row">
+            <div class="col-md-6">
+                <img
+                    src="{{demo.imageUrl}}"
+                    alt="Bt speakers"
+                    style="width:70%"
+                >
+                <br>
+                Domain :
+                <a href="https://amazon.in/">{{demo.domain}}</a>
+            </div>
+            <div class="col-md-6">
+                <h5 class="card-title price">
+                    ProductId:
+                {{demo.product_id}}
+                </h5>
+                <p class="price">Price:
+              {{demo.price}}</p>
+
+                <br>
+
+                <p>
+                    <button
+                        type="button"
+                        class="btn btn-outline-primary"
+                        (click)="myFunction()"
+                        [attr.aria-expanded]="!isCollapsed"
+                        aria-controls="collapseExample"
+                    >
+                        Features & Scores
+                    </button>
+                </p>
+                <div
+                    id="collapseExample"
+                    style="display: none;"
+                >
+                    <div
+                        class="row"
+                        *ngFor="let x of demo.topScores;index as i"
+                    >
+
+                        <div class="col-md-4">{{ x.topic }}</div>
+                        <div class="col-md-2">{{ x.score }}</div>
+                    </div>
+                </div>
+                <br>
+                <p class="card-text">
+                    <small class="text-muted">Created At: {{demo.createdAt}}</small>
+                </p>
+                <p class="card-text">
+                    <small class="text-muted">Reviewed At: {{demo.latestReviewDate}}</small>
+                </p>
+                <p class="card-text">
+                    <small class="text-muted">ReviewCount: {{demo.reviewCount}}</small>
+                </p>
+
+            </div>
+
+        </div>
+    </div>
+
+</div>
